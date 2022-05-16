@@ -1,4 +1,6 @@
 
+#pragma once
+
 namespace Windows::UI::DynamicWindow::Utility
 {
     class BitmapUtility

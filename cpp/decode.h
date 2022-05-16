@@ -1,6 +1,8 @@
 
 #include <wincodec.h>   // for IWICImagingFactory
 
+#pragma once
+
 HRESULT CreateWICFactory(
     _Outptr_ IWICImagingFactory** ppFactory);
 

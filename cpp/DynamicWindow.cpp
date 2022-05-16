@@ -6,6 +6,10 @@ namespace Windows::UI::DynamicWindow
 bool Window::s_classRegistered = false;
 const bool Window::s_enableDarkMode = true;
 
+HINSTANCE Window::s_hInstance;
+IWICImagingFactory* Window::s_wicFactory;
+ResourcePack* Window::s_resourcePack;
+
 void Window::initilize(
     Window* parentWindow,
     Rect rc,

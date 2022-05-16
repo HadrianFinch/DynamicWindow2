@@ -1,4 +1,6 @@
 
+
+#pragma once
 BOOL LayerWindow(
     _In_ HWND hwnd,
     _In_ HBITMAP hBitmap,

@@ -1,4 +1,6 @@
 
+#pragma once
+
 namespace Windows::UI::DynamicWindow
 {
     class ResourcePack
@@ -10,12 +12,6 @@ namespace Windows::UI::DynamicWindow
             int popup;
             int secondary;
         } ninegrid;
-
-        class ToggleSwitchData 
-        { public:
-            int on;
-            int off;
-        } switches;
 
         class ToggleSwitchData 
         { public:

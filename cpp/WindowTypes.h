@@ -1,4 +1,10 @@
+#include "Window.h"
 #include "layerWindow.h"
+#include "BitmapUtility.h"
+
+#pragma once
+
+using namespace Windows::UI::DynamicWindow::Utility;
 
 namespace Windows::UI::DynamicWindow::Basic
 {
@@ -160,7 +166,7 @@ namespace Windows::UI::DynamicWindow::Basic
             HBITMAP hBmpTemplate = nullptr;
             CreateBitmapFromResource(s_wicFactory, m_template, &hBmpTemplate);
             
-            m_hBitmap = Utility::BitmapUtility::GenerateBitmapFrom9Grid(hBmpTemplate, m_windowRect.Size());
+            m_hBitmap = BitmapUtility::GenerateBitmapFrom9Grid(hBmpTemplate, m_windowRect.Size());
 
             DeleteObject(hBmpTemplate);
 
@@ -500,7 +506,7 @@ namespace Windows::UI::DynamicWindow::Basic
             ImageWindow* pWindow = new ImageWindow();
             
             CreateBitmapFromResource(s_wicFactory, imageID, &pWindow->m_hBitmap);
-            Rect rect = {}; rect.Point(point); rect.Size(Utility::BitmapUtility::GetBitmapSize(pWindow->m_hBitmap));
+            Rect rect = {}; rect.Point(point); rect.Size(BitmapUtility::GetBitmapSize(pWindow->m_hBitmap));
             
             pWindow->initilize(
                 parent,
