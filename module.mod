@@ -1,4 +1,4 @@
 <module>
-    <include>modules\DynamicWindow3\cpp\</include>
-    <source>modules\DynamicWindow3\cpp\*.cpp</source>
+    <include>modules\DynamicWindow2\cpp\</include>
+    <source>modules\DynamicWindow2\cpp\*.cpp</source>
 </module>

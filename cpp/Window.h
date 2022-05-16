@@ -123,6 +123,7 @@ public:
             TranslateMessage(&msg);        
             DispatchMessage(&msg);
         }
+        return msg.wParam;
     }
 protected:
     void initilize(
