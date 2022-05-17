@@ -123,11 +123,11 @@ namespace Windows::UI::DynamicWindow::Basic
 
     class RoundedWindow : public Window
     {
-    private:
+    protected:
         HBITMAP m_hBitmap = nullptr;
         int m_template = s_resourcePack->ninegrid.standard;
     public: 
-        static RoundedWindow* Create(Rect rect, int templateImage, Window* parent)
+        static RoundedWindow* Create(Rect rect, Window* parent)
         {
             RoundedWindow* pWindow = new RoundedWindow();
             pWindow->initilize(
@@ -136,7 +136,6 @@ namespace Windows::UI::DynamicWindow::Basic
                 L"RoundedWindow",
                 0,
                 WS_EX_LAYERED);
-            pWindow->m_template = templateImage;
             pWindow->Update();
 
             return pWindow;
@@ -171,6 +170,27 @@ namespace Windows::UI::DynamicWindow::Basic
             DeleteObject(hBmpTemplate);
 
             LayerWindow(m_hwnd, m_hBitmap, m_windowRect.Size(), m_windowRect.Point());
+        }
+    };
+    class PopupCardWindow : public RoundedWindow
+    {
+        PopupCardWindow()
+        {
+            m_template = s_resourcePack->ninegrid.popup;
+        }
+    public:
+        static PopupCardWindow* Create(Rect rect, Window* parent)
+        {
+            PopupCardWindow* pWindow = new PopupCardWindow();
+            pWindow->initilize(
+                parent,
+                rect,
+                L"PopupCardWindow",
+                0,
+                WS_EX_LAYERED);
+            pWindow->Update();
+
+            return pWindow;
         }
     };
 
@@ -670,7 +690,7 @@ namespace Windows::UI::DynamicWindow::Basic
                 nullptr,
                 0);
 
-            m_pPopup = RoundedWindow::Create({0, 0, 20, 20}, s_resourcePack->ninegrid.popup, this);
+            m_pPopup = PopupCardWindow::Create({0, 0, 20, 20}, this);
             m_pPopup->SetTextBackgroundColor(0x00ffffff);
             m_pPopup->HideWindow();
 

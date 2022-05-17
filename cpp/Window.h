@@ -104,15 +104,25 @@ public:
         DestroyWindow(m_hwnd);
     }
 
-    static bool Begin(HINSTANCE hinstance, ResourcePack resourcePack)
+    static bool Begin(HINSTANCE hinstance, ResourcePack* resourcePack)
     {
-        s_resourcePack = new ResourcePack(resourcePack);
+        s_resourcePack = resourcePack;
         s_hInstance = hinstance;
+
+        DWORD dwCoInit = COINIT_APARTMENTTHREADED;
+        HRESULT hr = CoInitializeEx(nullptr, dwCoInit);
+
+        if (FAILED(hr))
+        {
+            return false;
+        }
 
         if (FAILED(CreateWICFactory(&s_wicFactory)))
         {
             return false;
         }
+        
+        return true;
     }
 
     static int Run()

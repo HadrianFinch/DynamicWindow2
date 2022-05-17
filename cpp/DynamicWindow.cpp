@@ -10,6 +10,9 @@ HINSTANCE Window::s_hInstance;
 IWICImagingFactory* Window::s_wicFactory;
 ResourcePack* Window::s_resourcePack;
 
+ResourcePack* ResourcePack::Standard_Light = new ResourcePack({22100, 22101, 0}, {22102, 22103});
+ResourcePack* ResourcePack::Standard_Dark = new ResourcePack({22200, 22201, 0}, {22202, 22203});
+
 void Window::initilize(
     Window* parentWindow,
     Rect rc,

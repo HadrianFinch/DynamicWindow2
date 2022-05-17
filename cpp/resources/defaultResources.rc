@@ -1,0 +1,9 @@
+22100       IMAGE       modules\DynamicWindow3\cpp\resources\Light_9gStandard.png
+22101       IMAGE       modules\DynamicWindow3\cpp\resources\Light_9gPopup.png
+22102       IMAGE       modules\DynamicWindow3\cpp\resources\Light_ToggleSwitch.png
+22103       IMAGE       modules\DynamicWindow3\cpp\resources\Light_ToggleSwitch_on.png
+
+22200       IMAGE       modules\DynamicWindow3\cpp\resources\Dark_9gStandard.png
+22201       IMAGE       modules\DynamicWindow3\cpp\resources\Dark_9gPopup.png
+22202       IMAGE       modules\DynamicWindow3\cpp\resources\Dark_ToggleSwitch.png
+22203       IMAGE       modules\DynamicWindow3\cpp\resources\Dark_ToggleSwitch_on.png
